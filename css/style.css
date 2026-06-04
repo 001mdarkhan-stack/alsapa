@@ -154,3 +154,34 @@ footer.site a:hover{color:var(--orange)}
 @media(min-width:760px){.lead-band{grid-template-columns:1.1fr .9fr}}
 @media(max-width:920px){.cards,.adv,.steps,.revs,.trow{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:680px){nav.main,.hphone{display:none}.burger{display:flex}nav.main.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:#fff;padding:16px var(--gut);gap:12px;border-bottom:1px solid var(--line)}.cards,.adv,.steps,.revs,.trow,.calc .row,.calc .out{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr}}
+
+/* ===== v2 polish pass ===== */
+.hero{min-height:86vh;display:flex;align-items:center}
+.hero::before{background-image:linear-gradient(96deg,rgba(16,14,12,.93) 26%,rgba(16,14,12,.6) 56%,rgba(16,14,12,.18) 100%),url('https://alsapa.kz/wp-content/uploads/2026/05/IMG_5792-1024x574.jpg')}
+.hin{padding-block:clamp(56px,9vw,120px)}
+.hero h1{font-size:clamp(32px,6.4vw,64px)}
+.htag{display:inline-flex;align-items:baseline;gap:10px;background:var(--orange);color:#fff;padding:12px 18px;border-radius:14px;margin-top:24px;font-family:var(--fh);font-weight:800;font-size:clamp(22px,4vw,32px)}
+.htag span{font-size:14px;font-weight:600;color:#ffe3d4}
+.card .ph{overflow:hidden}
+.card .ph img{transition:transform .5s ease}
+.card:hover .ph img{transform:scale(1.06)}
+.card .clink i{transition:transform .2s}
+.card:hover .clink i{transform:translateX(5px)}
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1!important;transform:none!important;transition:none}}
+.cnt{font-variant-numeric:tabular-nums}
+.gis{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;color:var(--ink2);flex-wrap:wrap}
+.gis-b{background:#1BA03E;color:#fff;font-family:var(--fh);font-weight:700;font-size:12px;padding:3px 8px;border-radius:6px}
+.gis b{font-family:var(--fh);color:var(--ink)}
+.gis a{color:var(--orange);text-decoration:underline}
+.mbar{display:none}
+@media(max-width:680px){
+ .mbar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px -10px rgba(0,0,0,.25)}
+ .mbar a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 4px;font-family:var(--fh);font-weight:600;font-size:11px;color:var(--ink)}
+ .mbar a i{font-size:20px;color:var(--orange)}
+ .mbar a.wa i{color:#25D366}
+ .mbar a+a{border-left:1px solid var(--line)}
+ body{padding-bottom:62px}
+ .wapp{bottom:74px}
+}
