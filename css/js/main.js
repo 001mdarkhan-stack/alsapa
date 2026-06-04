@@ -22,3 +22,30 @@ function alsapaLead(e){
 }
 document.addEventListener('input',function(e){if(e.target.id==='cArea'||e.target.id==='cTh')alsapaCalc();});
 document.addEventListener('DOMContentLoaded',function(){if(document.getElementById('cArea'))alsapaCalc();});
+
+/* ===== v2 polish: reveal, counters, mobile bar ===== */
+document.documentElement.classList.add('js');
+document.addEventListener('DOMContentLoaded',function(){
+  var rev=[].slice.call(document.querySelectorAll('.blk, .fig'));
+  rev.forEach(function(el){el.classList.add('reveal');});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    rev.forEach(function(el){io.observe(el);});
+  } else { rev.forEach(function(el){el.classList.add('in');}); }
+  function fmt(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ');}
+  function run(el){var t=+el.getAttribute('data-count'),s=performance.now(),dur=1300;
+    function step(now){var p=Math.min((now-s)/dur,1);el.textContent=fmt(Math.floor((1-Math.pow(1-p,3))*t));if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);}
+  var cnts=[].slice.call(document.querySelectorAll('[data-count]'));
+  if('IntersectionObserver' in window){
+    var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run(e.target);io2.unobserve(e.target);}});},{threshold:.5});
+    cnts.forEach(function(el){io2.observe(el);});
+  } else { cnts.forEach(run); }
+  if(!document.querySelector('.mbar')){
+    var bar=document.createElement('div');bar.className='mbar';
+    bar.innerHTML='<a href="tel:+77009985819"><i class="ti ti-phone"></i>Звонок</a>'+
+      '<a class="wa" href="https://wa.me/77009985819?text='+encodeURIComponent('Здравствуйте! Нужна консультация по газоблокам.')+'"><i class="ti ti-brand-whatsapp"></i>WhatsApp</a>'+
+      '<a href="#calc"><i class="ti ti-calculator"></i>Расчёт</a>';
+    document.body.appendChild(bar);
+  }
+});
