@@ -34,7 +34,7 @@ nav.main a:hover{color:var(--orange)}
 .burger span{width:25px;height:2px;background:var(--ink);display:block;border-radius:2px}
 /* hero */
 .hero{position:relative;color:#fff;overflow:hidden;background:#1a1a1a}
-.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(105deg,rgba(20,18,16,.92) 38%,rgba(20,18,16,.55) 100%),url('https://alsapa.kz/wp-content/uploads/2026/05/IMG_5792-1024x574.jpg');background-size:cover;background-position:center}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(105deg,rgba(20,18,16,.92) 38%,rgba(20,18,16,.55) 100%),url('../img/hero.jpg');background-size:cover;background-position:center}
 .hin{position:relative;padding:clamp(48px,7vw,96px) 0 clamp(40px,5vw,72px);max-width:760px}
 .hero .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(232,90,26,.18);border:1px solid rgba(232,90,26,.5);color:#ffb892;font-family:var(--fh);font-weight:600;font-size:13px;padding:7px 14px;border-radius:999px;margin-bottom:18px}
 .hero h1{color:#fff;font-size:clamp(30px,6vw,58px);font-weight:800;max-width:18ch}
@@ -157,7 +157,7 @@ footer.site a:hover{color:var(--orange)}
 
 /* ===== v2 polish pass ===== */
 .hero{min-height:86vh;display:flex;align-items:center}
-.hero::before{background-image:linear-gradient(96deg,rgba(16,14,12,.93) 26%,rgba(16,14,12,.6) 56%,rgba(16,14,12,.18) 100%),url('https://alsapa.kz/wp-content/uploads/2026/05/IMG_5792-1024x574.jpg')}
+.hero::before{background-image:linear-gradient(96deg,rgba(16,14,12,.93) 26%,rgba(16,14,12,.6) 56%,rgba(16,14,12,.18) 100%),url('../img/hero.jpg')}
 .hin{padding-block:clamp(56px,9vw,120px)}
 .hero h1{font-size:clamp(32px,6.4vw,64px)}
 .htag{display:inline-flex;align-items:baseline;gap:10px;background:var(--orange);color:#fff;padding:12px 18px;border-radius:14px;margin-top:24px;font-family:var(--fh);font-weight:800;font-size:clamp(22px,4vw,32px)}
@@ -185,3 +185,18 @@ footer.site a:hover{color:var(--orange)}
  body{padding-bottom:62px}
  .wapp{bottom:74px}
 }
+
+/* ===== brand logo ===== */
+.logo{display:flex;align-items:center;gap:11px}
+.logo-ic{height:42px;width:auto;display:block;flex:none}
+.logo .logo-tx{display:flex;flex-direction:column;line-height:1.05;color:inherit}
+.logo b{color:var(--orange);font-weight:800;font-style:normal}
+@media(max-width:680px){.logo-ic{height:34px}.logo{gap:8px}.logo .logo-tx small{display:none}}
+
+/* ===== hero hierarchy: price chip glass + spacing ===== */
+.htag{background:rgba(18,16,14,.42);border:1px solid rgba(255,255,255,.24);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;padding:13px 20px}
+.htag span{color:#ffd2b3}
+.hero .cta-row{margin-top:22px}
+.hero .badges{margin-top:30px}
+/* logo safety: never oversize even if cached */
+header.site .logo-ic{height:42px!important;max-height:42px}
