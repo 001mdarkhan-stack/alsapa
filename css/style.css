@@ -200,3 +200,11 @@ footer.site a:hover{color:var(--orange)}
 .hero .badges{margin-top:30px}
 /* logo safety: never oversize even if cached */
 header.site .logo-ic{height:42px!important;max-height:42px}
+
+/* ===== logo as full image in header ===== */
+header.site{background:#fff;backdrop-filter:none}
+header.site .bar{height:84px}
+header.site .logo{display:block;position:relative;height:72px;width:98px;background:url('../img/logo-full.png') no-repeat left center;background-size:auto 72px;overflow:hidden}
+header.site .logo .logo-ic{display:none}
+header.site .logo .logo-tx{position:absolute;left:-9999px;top:0}
+@media(max-width:680px){header.site .bar{height:68px}header.site .logo{height:56px;width:76px;background-size:auto 56px}nav.main.open{top:68px}}
