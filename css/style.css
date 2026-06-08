@@ -208,3 +208,7 @@ header.site .logo{display:block;position:relative;height:72px;width:98px;backgro
 header.site .logo .logo-ic{display:none}
 header.site .logo .logo-tx{position:absolute;left:-9999px;top:0}
 @media(max-width:680px){header.site .bar{height:68px}header.site .logo{height:56px;width:76px;background-size:auto 56px}nav.main.open{top:68px}}
+
+/* ===== footer logo as image (white plate on dark footer) ===== */
+footer.site .logo{display:inline-block;width:118px;height:82px;padding:0;background:#fff url('../img/logo-full.png') no-repeat center/auto 60px;border-radius:14px;font-size:0;line-height:0;color:transparent}
+footer.site .logo b{display:none}
